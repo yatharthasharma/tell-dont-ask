@@ -1,9 +1,11 @@
 # Tell don't ask
 
 ## Prerequisites
+
 Java 11
 
 ## Tasks
+
     * Go through the payment orchestrator (PaymentService)
     * Identify accessors from Account that are used to get the state of the object
     * Identify accessors from Account that are used to manipulate its state from outside Account.java class

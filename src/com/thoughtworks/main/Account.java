@@ -45,7 +45,6 @@ public class Account {
         }
         balance -= debitAmount;
         return balance;
-
     }
 
     public int credit(int creditAmount, Currency depositCurrency) {
