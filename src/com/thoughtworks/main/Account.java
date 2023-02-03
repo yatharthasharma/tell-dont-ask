@@ -3,6 +3,7 @@ package com.thoughtworks.main;
 public class Account {
     private final int accountId;
     private final int overdraftLimit;
+    private int overdraftRemaining;
     private final Currency currency;
     private int balance;
 
@@ -18,8 +19,8 @@ public class Account {
         return currency;
     }
 
-    public int getOverdraftLimit() {
-        return overdraftLimit;
+    public int getOverdraftRemaining() {
+        return overdraftRemaining;
     }
 
     public Account(int accountId, int balance, Currency currency, int overdraftLimit) {
@@ -30,6 +31,7 @@ public class Account {
         this.balance = balance;
         this.currency = currency;
         this.overdraftLimit = overdraftLimit;
+        this.overdraftRemaining = overdraftLimit;
     }
 
     public void currencyChecks(Currency transactionCurrency) {
