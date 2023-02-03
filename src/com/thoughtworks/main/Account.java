@@ -7,25 +7,12 @@ public class Account {
     private final Currency currency;
     private int balance;
 
-    public void setBalance(int balance) {
-        this.balance = balance;
-    }
-
-    public int getBalance() {
-        return balance;
-    }
-
-    public Currency getCurrency() {
-        return currency;
-    }
-
-    public int getOverdraftRemaining() {
-        return overdraftRemaining;
-    }
-
     public Account(int accountId, int balance, Currency currency, int overdraftLimit) {
         if (balance < 0) {
             throw new InsufficientBalanceException("Unable to open an account with a negative balance!");
+        }
+        if (overdraftLimit < 0) {
+            throw new InvalidOverdraftLimitException("Unable to open an account with a negative overdraft limit!");
         }
         this.accountId = accountId;
         this.balance = balance;
