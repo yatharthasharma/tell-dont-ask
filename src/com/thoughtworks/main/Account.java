@@ -1,6 +1,6 @@
 package com.thoughtworks.main;
 
-import java.util.function.Function;
+import java.util.function.IntFunction;
 
 public class Account {
     private final int accountId;
@@ -21,7 +21,7 @@ public class Account {
         this.overdraftRemaining = overdraftLimit;
     }
 
-    private Integer operation(Function<Integer, Integer> operation, Currency depositCurrency, Integer amount) {
+    private Integer operation(IntFunction<Integer> operation, Currency depositCurrency, Integer amount) {
         if (currency.equals(depositCurrency)) {
             return operation.apply(amount);
         }
